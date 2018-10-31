@@ -682,6 +682,10 @@ export const adConfig = {
     prefetch: 'https://static.virgul.com/theme/mockups/noktaamp/ampjs.js',
     renderStartImplemented: true,
   },
+  'onead':{
+    prefetch: 'https://ad-specs.guoshipartners.com/static/js/onead-amp.js',
+    renderStartImplemented: true,
+  },
 
   'openadstream': {},
 
