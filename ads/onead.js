@@ -5,8 +5,9 @@ import {validateData} from '../3p/3p';
  * @param {!Object} data
  */
 export function onead(global, data) {
-  validateData(data, [], ['uid', 'pid','host']);
+  validateData(data, [], ['playmode','uid', 'pid','host']);
   global.ONEAD = {
+    playmode:data.playmode,
     uid:data.uid,
     pid:data.pid,
     host:data.host
@@ -26,16 +27,15 @@ function createOneadSlot(win){
  * @param {!Window} win
  */
 function createAdUnit(win){
-    let src = 'https://ad-specs.guoshipartners.com/static/js/onead-amp.js';
+    let src = 'https://ad-specs.guoshipartners.com/static/js/onead-amp.min.js';
     let js = document.createElement('script');
     js.async = false;
-    js.onload = function(){
-        OneadAmp.setup({
-            uid:win.ONEAD.uid,
-            pid:win.ONEAD.pid,
-            host:win.ONEAD.host
-        })
-    };
+    js.onload = () => OneAD.queryAd.amp.setup({
+        playmode:win.ONEAD.playmode,
+        uid:win.ONEAD.uid,
+        pid:win.ONEAD.pid,
+        host:win.ONEAD.host
+    });
     js.type = 'text/javascript';
     js.src = src;
     win.document.head.appendChild(js);
