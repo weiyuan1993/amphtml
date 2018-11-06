@@ -30,6 +30,7 @@ function createAdUnit(win) {
   const src = 'https://ad-specs.guoshipartners.com/static/js/onead-amp.min.js';
   const js = document.createElement('script');
   js.async = false;
+  win.ONEAD.isAMP = true;
   js.onload = () => win.Guoshi.queryAd.amp.setup({
     playMode: win.ONEAD.playMode,
     uid: win.ONEAD.uid,
