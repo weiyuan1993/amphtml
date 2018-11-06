@@ -6,7 +6,7 @@ import {validateData} from '../3p/3p';
  */
 export function onead(global, data) {
   validateData(data, [], ['playmode', 'uid', 'pid', 'host']);
-  global.ONEAD = {
+  global.ONEAD_AMP = {
     playmode: data.playmode,
     uid: data.uid,
     pid: data.pid,
@@ -30,12 +30,12 @@ function createAdUnit(win) {
   const src = 'https://ad-specs.guoshipartners.com/static/js/onead-amp.min.js';
   const js = document.createElement('script');
   js.async = false;
-  win.ONEAD.isAMP = true;
+  win.ONEAD_AMP.isAMP = true;
   js.onload = () => win.Guoshi.queryAd.amp.setup({
-    playMode: win.ONEAD.playMode,
-    uid: win.ONEAD.uid,
-    pid: win.ONEAD.pid,
-    host: win.ONEAD.host,
+    playMode: win.ONEAD_AMP.playMode,
+    uid: win.ONEAD_AMP.uid,
+    pid: win.ONEAD_AMP.pid,
+    host: win.ONEAD_AMP.host,
   });
   js.type = 'text/javascript';
   js.src = src;
