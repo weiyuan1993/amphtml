@@ -6,6 +6,11 @@ import {validateData} from '../3p/3p';
  */
 export function onead(global, data) {
   validateData(data, [], ['playmode', 'uid', 'pid', 'host']);
+  global.Guoshi = {
+    queryAd: {
+      amp: {},
+    },
+  };
   global.ONEAD_AMP = {
     playmode: data.playmode,
     uid: data.uid,
