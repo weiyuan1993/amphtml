@@ -226,6 +226,7 @@ exports.extensionBundles = [
     options: {hasCss: true},
     type: TYPES.MISC,
   },
+  {name: 'amp-skimlinks', version: '0.1', type: TYPES.MISC},
   {name: 'amp-soundcloud', version: '0.1', type: TYPES.MEDIA},
   {name: 'amp-springboard-player', version: '0.1', type: TYPES.MEDIA},
   {
@@ -279,6 +280,9 @@ exports.extensionBundles = [
     version: '0.1',
     options: {hasCss: true},
     type: TYPES.MISC,
+    postPrepend: [
+      'third_party/react-dates/bundle.js',
+    ],
   },
   {
     name: 'amp-image-viewer',
@@ -341,6 +345,11 @@ exports.extensionBundles = [
     version: '0.1',
     options: {hasCss: true},
     type: TYPES.MISC,
+    postPrepend: [
+      'third_party/d3/d3.js',
+      'third_party/d3-geo-projection/d3-geo-projection.js',
+      'third_party/vega/vega.js',
+    ],
   },
   {name: 'amp-google-vrview-image', version: '0.1', type: TYPES.MISC},
   {
@@ -382,6 +391,7 @@ exports.extensionBundles = [
   {name: 'amp-yotpo', version: '0.1', type: TYPES.MISC},
   {name: 'amp-youtube', version: '0.1', type: TYPES.MEDIA},
   {name: 'amp-mowplayer', version: '0.1', type: TYPES.MEDIA},
+  {name: 'amp-powr-player', version: '0.1', type: TYPES.MEDIA},
 ];
 
 exports.aliasBundles = [
